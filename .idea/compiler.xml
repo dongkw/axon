@@ -7,15 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="server" />
         <module name="gateway-api" />
         <module name="api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api (1)" target="8" />
+      <module name="axon" target="1.8" />
+      <module name="gateway-api (1)" target="8" />
+      <module name="instruction" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api" options="-parameters" />
+      <module name="api (1)" options="-parameters" />
+      <module name="axon (1)" options="" />
       <module name="gateway-api" options="-parameters" />
+      <module name="gateway-api (1)" options="-parameters" />
+      <module name="instruction" options="-parameters" />
+      <module name="server" options="-parameters" />
     </option>
   </component>
 </project>
