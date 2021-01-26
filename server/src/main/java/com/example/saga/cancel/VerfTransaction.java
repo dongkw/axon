@@ -5,7 +5,7 @@ import com.example.command.VerfRollbackCmd;
 import com.example.event.VerfFailEvt;
 import com.example.event.VerfRollbackEvt;
 import com.example.event.VerfSuccEvt;
-import com.example.util.CommandGatewayFactory;
+import com.example.util.CmdGatewayFactory;
 import com.example.util.SagaStatus;
 import com.example.util.TransactionUnit;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +33,7 @@ public class VerfTransaction extends TransactionUnit {
     public void start() {
         VerfCmd cmd = new VerfCmd();
         cmd.setId(this.id);
-        CommandGatewayFactory.getCommandGateway().send(cmd);
+        CmdGatewayFactory.getCommandGateway().send(cmd);
         log.info("send:{}", cmd);
 
     }
@@ -42,7 +42,7 @@ public class VerfTransaction extends TransactionUnit {
     public void rollback() {
         VerfRollbackCmd cmd = new VerfRollbackCmd();
         cmd.setId(this.id);
-        CommandGatewayFactory.getCommandGateway().send(cmd);
+        CmdGatewayFactory.getCommandGateway().send(cmd);
         log.info("send:{}", cmd);
 
     }

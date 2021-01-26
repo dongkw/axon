@@ -31,14 +31,14 @@ public class ParallelTransaction extends TransactionGroup {
 
     @Override
     public void start() {
-        transactions.forEach(t -> t.start());
+        transactions.forEach(ITransaction::start);
     }
 
     @Override
     public void rollback() {
         transactions.stream().filter(t ->
                 Objects.equals(t.getStatus(), SagaStatus.SUCCESS))
-                .forEach(t -> t.rollback());
+                .forEach(ITransaction::rollback);
     }
 
     @Override

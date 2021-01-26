@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @Date 2021/1/26、2:33 下午
  **/
 @Component
-public class CommandGatewayFactory {
+public class CmdGatewayFactory {
 
 
     private static CommandGateway gateway;

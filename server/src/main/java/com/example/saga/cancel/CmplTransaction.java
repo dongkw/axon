@@ -5,7 +5,7 @@ import com.example.command.CmplRollbackCmd;
 import com.example.event.CmplFailEvt;
 import com.example.event.CmplRollbackEvt;
 import com.example.event.CmplSuccEvt;
-import com.example.util.CommandGatewayFactory;
+import com.example.util.CmdGatewayFactory;
 import com.example.util.SagaStatus;
 import com.example.util.TransactionUnit;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ public class CmplTransaction extends TransactionUnit {
     public void start() {
         CmplCmd cmd = new CmplCmd();
         cmd.setId(this.id);
-        CommandGatewayFactory.getCommandGateway().send(cmd);
+        CmdGatewayFactory.getCommandGateway().send(cmd);
         log.info("send:{}", cmd);
     }
 
@@ -40,7 +40,7 @@ public class CmplTransaction extends TransactionUnit {
     public void rollback() {
         CmplRollbackCmd cmd = new CmplRollbackCmd();
         cmd.setId(this.id);
-        CommandGatewayFactory.getCommandGateway().send(cmd);
+        CmdGatewayFactory.getCommandGateway().send(cmd);
         log.info("send:{}", cmd);
     }
 
