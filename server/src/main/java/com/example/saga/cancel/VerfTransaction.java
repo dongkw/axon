@@ -25,7 +25,6 @@ public class VerfTransaction extends TransactionUnit {
 
     public VerfTransaction(String id) {
         this.id = id;
-        getEventRegList();
     }
 
 

@@ -36,5 +36,6 @@ public class AxonConfig {
         configurer.registerTrackingEventProcessorConfiguration(
                 c -> TrackingEventProcessorConfiguration.forParallelProcessing(2)
         );
+//        configurer.usingSubscribingEventProcessors();
     }
 }

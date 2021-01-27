@@ -11,4 +11,5 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 public class CancelledCmd {
     @TargetAggregateIdentifier
     private String id;
+    private String data;
 }

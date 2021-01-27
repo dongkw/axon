@@ -25,7 +25,6 @@ public class CmplTransaction extends TransactionUnit {
 
     public CmplTransaction(String id) {
         this.id = id;
-        getEventRegList();
     }
 
     @Override

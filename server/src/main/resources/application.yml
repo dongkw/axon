@@ -15,21 +15,23 @@ server:
 logging:
   level:
     root: info
-    com:
-      example: debug
+#    com:
+#      example: debug
 
 
 axon:
   axonserver:
-#    servers: 192.168.221.195
-    servers: localhost
+#    ssl-enabled: true
+#    cert-file: ./tls.crt
+    #    servers: 192.168.221.195
+    servers: 192.168.10.60
 
   distributed:
     enabled: true
   serializer:
-    general: jackson
-    messages: jackson
-    events: jackson
+    general: xstream
+    messages: xstream
+    events: xstream
 
 
 

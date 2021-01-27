@@ -5,8 +5,8 @@ import com.example.aggregate.bean.command.FailCmd;
 import com.example.aggregate.bean.event.CancelEvent;
 import com.example.event.*;
 import com.example.util.ITransaction;
+import com.example.util.ParallelTransaction;
 import com.example.util.SagaStatus;
-import com.example.util.SerialTransaction;
 import lombok.extern.slf4j.Slf4j;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.modelling.saga.SagaEventHandler;
@@ -37,8 +37,8 @@ public class CancelSaga {
     @SagaEventHandler(associationProperty = "id")
     public void startSaga(CancelEvent event) {
         this.vo = event;
-//        ParallelTransaction transaction = new ParallelTransaction();
-        SerialTransaction transaction = new SerialTransaction();
+        ParallelTransaction transaction = new ParallelTransaction();
+//        SerialTransaction transaction = new SerialTransaction();
 
         transaction.setTransactions(Arrays.asList(new CmplTransaction(vo.getId()), new VerfTransaction(vo.getId())));
         this.transaction = transaction;

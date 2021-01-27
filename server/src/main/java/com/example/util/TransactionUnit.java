@@ -6,10 +6,14 @@ package com.example.util;
  **/
 public abstract class TransactionUnit implements ITransaction {
 
-   protected SagaStatus sagaStatus;
+    protected SagaStatus sagaStatus;
 
-   @Override
-   public SagaStatus getStatus() {
-      return sagaStatus;
-   }
+    public TransactionUnit() {
+        getEventRegList();
+    }
+
+    @Override
+    public SagaStatus getStatus() {
+        return sagaStatus;
+    }
 }

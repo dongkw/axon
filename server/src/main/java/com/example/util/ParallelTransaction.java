@@ -36,8 +36,8 @@ public class ParallelTransaction extends TransactionGroup {
 
     @Override
     public void rollback() {
-        transactions.stream().filter(t ->
-                Objects.equals(t.getStatus(), SagaStatus.SUCCESS))
+        transactions.stream()
+                .filter(t -> Objects.equals(t.getStatus(), SagaStatus.SUCCESS))
                 .forEach(ITransaction::rollback);
     }
 

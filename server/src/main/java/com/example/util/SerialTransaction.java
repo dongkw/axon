@@ -5,8 +5,10 @@ import java.util.Objects;
 /**
  * @Author dongkw
  * @Date 2021/1/25、4:24 下午
+ * 如果后一个事务依赖前一个事务的返回值该怎么办？？？
  **/
 public class SerialTransaction extends TransactionGroup {
+
 
     int curIndex;
 
